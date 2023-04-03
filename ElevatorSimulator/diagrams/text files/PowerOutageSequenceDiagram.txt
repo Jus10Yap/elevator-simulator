@@ -1,0 +1,37 @@
+title Sequence Diagram : Power Outage 
+
+participant aPushButton
+participant aFloorButton
+participant aFloor
+participant theECS
+participant theAllocationStrat
+participant anElevator
+participant aBell
+participant aDoor
+participant aDoorSensor
+participant aFloorSensor
+participant aWeightSensor
+participant aButtonPanel
+participant aDisplay
+participant anAudio
+actor aPassenger
+participant aDestinationFloor
+
+
+aPushButton->theECS: powerOutage()
+anElevator<-theECS: powerOutage()
+anElevator->aDoor: close()
+
+// reach a safe floor
+loop while car has not reached safe floor
+anElevator->anElevator: move(direction)
+aFloorSensor<-anElevator: findFloor(floorNum)
+aFloorSensor-->anElevator: setCurrentFloor(floorNum)
+anElevator-->theECS:updateElevatorPosition(carNum, currentFloor)
+theECS->theECS: notify();
+end
+
+theECS->anElevator: stop()
+anElevator-->aDisplay: updateDisplay(output)
+anElevator-->anAudio: playAudio(output)
+anElevator->aDoor: open()

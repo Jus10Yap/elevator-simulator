@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1269</width>
+    <height>571</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(242, 233, 228);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="simulate">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>470</y>
+      <width>281</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(132, 169, 140);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Start Simulation</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="floorsDrop">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>370</y>
+      <width>281</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(74, 78, 105);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="elevatorsDrop">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>420</y>
+      <width>281</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(74, 78, 105);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="fireButt">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>450</y>
+      <width>181</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(154, 140, 152);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>FIRE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="powerButt">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>370</y>
+      <width>181</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(154, 140, 152);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>POWER OUTAGE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="overloadButt">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>450</y>
+      <width>181</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(154, 140, 152);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>OVERLOAD</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="blockButt">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>450</y>
+      <width>181</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(154, 140, 152);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>DOOR BLOCK</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>350</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(34, 34, 59);</string>
+    </property>
+    <property name="text">
+     <string>SET FLOORS</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>400</y>
+      <width>111</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(34, 34, 59);</string>
+    </property>
+    <property name="text">
+     <string>SET ELEVATORS</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>20</y>
+      <width>381</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <widget class="QComboBox" name="floorDrop">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>20</y>
+       <width>241</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-style: none;
+color: rgb(34, 34, 59);
+background-color: rgb(201, 173, 167);
+border-radius: 5px;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="up">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>161</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Noto Sans Adlam</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(34, 34, 59);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+     </property>
+     <property name="text">
+      <string>UP</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="down">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>60</y>
+       <width>161</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Noto Sans Adlam</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(34, 34, 59);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+     </property>
+     <property name="text">
+      <string>DOWN</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>54</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Noto Sans Adlam</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(34, 34, 59);</string>
+     </property>
+     <property name="text">
+      <string>FLOOR</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="request" native="true">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>170</y>
+      <width>381</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <widget class="QComboBox" name="carNum">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>20</y>
+       <width>241</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-style: none;
+color: rgb(34, 34, 59);
+background-color: rgb(201, 173, 167);
+border-radius: 5px;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="push">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>161</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Noto Sans Adlam</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(34, 34, 59);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+     </property>
+     <property name="text">
+      <string>PUSH</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="help">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>120</y>
+       <width>161</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Noto Sans Adlam</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(154, 140, 152);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+     </property>
+     <property name="text">
+      <string>HELP</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>81</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Noto Sans Adlam</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(34, 34, 59);</string>
+     </property>
+     <property name="text">
+      <string>ELEVATOR#</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="floorNum">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>70</y>
+       <width>241</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-style: none;
+color: rgb(34, 34, 59);
+background-color: rgb(201, 173, 167);
+border-radius: 5px;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>71</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Noto Sans Adlam</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(34, 34, 59);</string>
+     </property>
+     <property name="text">
+      <string>FLOOR #</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="next">
+    <property name="geometry">
+     <rect>
+      <x>1160</x>
+      <y>10</y>
+      <width>80</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(201, 173, 167);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Next</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="table">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>50</y>
+      <width>511</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(34, 34, 59);
+background-color: rgb(201, 173, 167);
+border-style: none;
+text-align: center;
+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="close">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>370</y>
+      <width>181</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(34, 34, 59);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>CLOSE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="open">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>370</y>
+      <width>181</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(34, 34, 59);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>OPEN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>20</y>
+      <width>81</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(34, 34, 59);</string>
+    </property>
+    <property name="text">
+     <string>ELEVATORS</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>180</y>
+      <width>61</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(34, 34, 59);
+</string>
+    </property>
+    <property name="text">
+     <string>FLOORS</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="display">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>50</y>
+      <width>211</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(34, 34, 59);
+background-color: rgb(201, 173, 167);
+border-style: none;
+text-align: center;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="buildFire">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>450</y>
+      <width>181</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Noto Sans Adlam</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(154, 140, 152);
+color: rgb(255, 255, 255);
+border-style: none;
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>BUILDING FIRE</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1269</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuElevator_Simulation">
+    <property name="title">
+     <string>Elevator Simulation</string>
+    </property>
+   </widget>
+   <addaction name="menuElevator_Simulation"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

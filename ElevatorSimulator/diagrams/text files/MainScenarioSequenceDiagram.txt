@@ -1,0 +1,79 @@
+title Sequence Diagram: Riding an Elevator
+
+
+participant aFloor
+participant theECS
+participant theAllocationStrat
+participant anElevator
+participant aBell
+participant aDoor
+participant aDoorSensor
+participant aFloorSensor
+participant aWeightSensor
+participant aButtonPanel
+participant aDisplay
+participant anAudio
+actor aPassenger
+participant aFloorButton
+participant aDestinationFloor
+
+
+note over aPassenger: the passenger approaches an elevator
+
+aPassenger->aFloorButton: pressed() 
+note over aFloorButton: either the “up” or “down” button
+note over aFloorButton: pressed button illuminates
+
+theECS->anElevator: floorRequest(int floorNum, int direction)
+theECS->anElevator: move(direction)
+anElevator->aFloorSensor: findFloor(floorNum)
+aFloorSensor-->anElevator: updateFloor(floorNum)
+note over aFloorButton: pressed button stops illuminating
+theECS->anElevator:stop()
+anElevator->aDoor:open()
+anElevator->aBell: ring()
+
+aPassenger->anElevator: Boards elevator
+
+nElevator->aDoor:close()
+note over aPassenger: looks for the button panel
+aPassenger->aButtonPanel: pressed(floorNum)
+anElevator<-aButtonPanel: pressButton(floorNum)
+
+anElevator->theECS: carRequest(floorNum, carNum)
+
+theECS->anElevator: requestFloor(floorNum)
+theECS->anElevator: move(direction)
+
+anElevator->aDisplay: updateDisplay(output)
+
+alt there are requested floors in between travel
+	anElevator->aFloorSensor: findFloor(floorNum)
+	aFloorSensor-->anElevator: updateFloor(floorNum)
+    theECS->anElevator:stop()
+    anElevator->aDoor:open()
+    anElevator->aBell: ring()
+    aPassenger->anElevator: Boards/Exit elevator
+    nElevator->aDoor:close()
+    note over aPassenger: newly boarded passenger(s) look for the button panel
+	aPassenger->aButtonPanel: pressed(floorNum)
+	anElevator<-aButtonPanel: pressButton(floorNum)
+
+	anElevator->theECS: carRequest(floorNum, carNum)
+
+	theECS->anElevator: requestFloor(floorNum)
+	theECS->anElevator: move(direction)
+
+	anElevator->aDisplay: updateDisplay(output)
+end 
+    
+
+anElevator->aFloorSensor: findFloor(floorNum)
+aFloorSensor-->anElevator: updateFloor(floorNum)
+
+
+theECS->anElevator:stop()
+anElevator->aDoor:open()
+anElevator->aBell: ring()
+
+aPassenger->anElevator: Exit elevator

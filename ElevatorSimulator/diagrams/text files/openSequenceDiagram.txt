@@ -1,0 +1,50 @@
+title Sequence Diagram: holds door open longer than 10 seconds
+
+participant aFloorButton
+participant aFloor
+participant theECS
+participant theAllocationStrat
+participant anElevator
+participant aBell
+participant aDoor
+participant aDoorSensor
+participant aFloorSensor
+participant aWeightSensor
+participant aButtonPanel
+participant aDisplay
+participant anAudio
+actor aPassenger
+participant aDestinationFloor
+
+aPassenger->anElevator: pressed()
+theECS->anElevator: floorRequest(int floorNum, int direction)
+theECS->anElevator: move(direction)
+
+anElevator->aFloorSensor: findFloor(floorNum)
+aFloorSensor-->anElevator: updateFloor(floorNum)
+
+theECS->anElevator:stop()
+anElevator->aDoor:open()
+anElevator->aBell: ring()
+
+aPassenger->anElevator: Boards elevator
+
+nElevator->aDoor:close()
+aPassenger->aButtonPanel: pressed(floorNum)
+anElevator<-aButtonPanel: pressButton(floorNum)
+
+anElevator->theECS: carRequest(floorNum, carNum)
+
+theECS->anElevator: requestFloor(floorNum)
+theECS->anElevator: move(direction)
+
+anElevator->aFloorSensor: findFloor(floorNum)
+aFloorSensor-->anElevator: updateFloor(floorNum)
+
+theECS->anElevator:stop()
+anElevator->aDoor:open()
+anElevator->aBell: ring()
+
+aPassenger->aButtonPanel: presses 'OPEN' button
+aButtonPanel->anElevator: openDoor()
+anElevator->aDoor: open()

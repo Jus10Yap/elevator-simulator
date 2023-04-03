@@ -1,0 +1,40 @@
+title Sequence Diagram : Overload 
+
+participant aPushButton
+participant aFloorButton
+participant aFloor
+participant theECS
+participant theAllocationStrat
+participant anElevator
+participant aBell
+participant aDoor
+participant aDoorSensor
+participant anFloorSensor
+participant aWeightSensor
+participant aButtonPanel
+participant aDisplay
+participant anAudio
+actor aPassenger
+participant aDestinationFloor
+
+aPushButton->theECS:overload(carNum)
+theECS->anElevator:overload()
+activate aWeightSensor
+aWeightSensor<-anElevator: overload()
+anElevator-->anElevator:stop()
+
+//message
+parallel 
+anElevator->aDisplay: updateDisplay(output)
+aDisplay-->aPassenger: output
+parallel off
+parallel 
+anElevator->anAudio: playAudio(output)
+anAudio-->aPassenger: output
+parallel off
+
+note over aWeightSensor: capacity is reduced to below max capacity
+aWeightSensor->anElevator: removeOverload()
+anElevator->theECS: removeOverload(carNum)
+theECS-->anElevator: move(direction)
+anElevator->aDoor: close()

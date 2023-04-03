@@ -1,0 +1,50 @@
+title Sequence Diagram : Obstacle 
+
+participant aPushButton
+participant aFloorButton
+participant aFloor
+participant theECS
+participant theAllocationStrat
+participant anElevator
+participant aBell
+participant aDoor
+participant aDoorSensor
+participant anFloorSensor
+participant aWeightSensor
+participant aButtonPanel
+participant aDisplay
+participant anAudio
+actor aPassenger
+participant aDestinationFloor
+
+aPushButton->aDoorSensor:obstacles()
+activate aDoorSensor
+note over aDoorSensor: senses an obstacle
+aDoorSensor->aDoor: obstacle()
+
+
+note over aDoor: if occurs repeatedly over a short period of time
+aDoor->anElevator: obstacleWarning()
+//message
+parallel 
+anElevator->aDisplay: updateDisplay(output)
+aDisplay-->aPassenger: output
+parallel off
+parallel 
+anElevator->anAudio: playAudio(output)
+anAudio-->aPassenger: output
+parallel off
+
+note over aDoorSensor: obstruction is removed
+aDoorSensor->aDoor: removeObstacle()
+aDoor->aDoor:close()
+aDoor->anElevator: removeObstacle()
+theECS<-anElevator: removeObstacle()
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+title Sequence Diagram: Help
+
+participant aFloorButton
+participant aFloor
+participant aBuildingSafetyService
+participant theECS
+participant theAllocationStrat
+participant anElevator
+participant aBell
+participant aDoor
+participant aDoorSensor
+participant aFloorSensor
+participant aWeightSensor
+participant aButtonPanel
+participant aDisplay
+participant anAudio
+actor aPassenger
+participant aDestinationFloor
+
+
+aPassenger->buttonPanel: presses 'HELP' button
+buttonPanel->anElevator: getHelp()
+activate theECS
+anElevator->theECS:help(carNum)
+theECS->aBuildingSafetyService: Sends "Help" signal
+anElevator<--theECS: connecting to building safety service through a voice connection
+anElevator->aPassenger: Initiates voice connection
+note over aPassenger: Speaks to building safety
+aBuildingSafetyService-->theECS: Notifies the end of the conversation
+theECS->aBuildingSafetyService: Closes the voice connection
+alt No response from Building Safety OR passenger
+    anElevator->theECS: call911(carNum)
+end
